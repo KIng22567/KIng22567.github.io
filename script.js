@@ -10,7 +10,10 @@ async function LoadBoard() {
 const boardDiv = document.getElementById("board");
 
 document.getElementById("newGameBtn").addEventListener("click", () => {
-  renderBoard(generateEmptyBoard());
+  (async () => {
+    const board = await generateEmptyBoard();
+    renderBoard(board);
+  })();
 });
 
 async function generateEmptyBoard() {
