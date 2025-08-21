@@ -1,3 +1,4 @@
+// The main file
 const boardDiv = document.getElementById('board');
 
 document.getElementById('newGameBtn').addEventListener('click', () => {
