@@ -24,12 +24,16 @@ async function generateEmptyBoard() {
 
 function renderBoard(board) {
   console.log(board);
-  if (!board || board.length === 0) {
-    console.error("Board is empty or undefined");
+  if (!board || board.length !== 8) {
+    console.error("Board is empty or not 8x8:", board);
     return;
   }
   boardDiv.innerHTML = ""; // clear previous board
   for (let i = 0; i < 8; i++) {
+    if (!Array.isArray(board[i]) || board[i].length !== 8) {
+      console.error(`Row ${i} is invalid:`, board[i]);
+      continue;
+    }
     for (let j = 0; j < 8; j++) {
       const square = document.createElement("div");
       square.className = `square ${(i + j) % 2 === 0 ? "white" : "black"}`;
