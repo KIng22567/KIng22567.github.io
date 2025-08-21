@@ -17,7 +17,6 @@ document.getElementById("newGameBtn").addEventListener("click", () => {
 });
 
 async function generateEmptyBoard() {
-  console.log(await LoadBoard());
   // Simple placeholder: 8x8 grid with letters for pieces
   const initialBoard = await LoadBoard();
   return initialBoard;
