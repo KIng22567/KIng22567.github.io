@@ -21,6 +21,10 @@ async function generateEmptyBoard() {
 }
 
 function renderBoard(board) {
+    if(!board || board.length ===0){
+        console.error("Board is empty or undefined")
+        return
+    }
     boardDiv.innerHTML = ''; // clear previous board
     for (let i = 0; i < 8; i++) {
         for (let j = 0; j < 8; j++) {
