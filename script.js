@@ -1,4 +1,12 @@
 // The main file
+
+const API_BASE = "http://localhost:5135"
+
+async function LoadBoard() {
+    const response = await fetch(`${API_BASE}/game/new`);
+    const board = await response.json()
+    return board
+}
 const boardDiv = document.getElementById('board');
 
 document.getElementById('newGameBtn').addEventListener('click', () => {
@@ -7,11 +15,11 @@ document.getElementById('newGameBtn').addEventListener('click', () => {
 
 function generateEmptyBoard() {
     // Simple placeholder: 8x8 grid with letters for pieces
-    const initialBoard = [
+    const initialBoard = LoadBoard() || [
         ["R","N","B","Q","K","B","N","R"],
         ["P","P","P","P","P","P","P","P"],
         ["","","","","","","",""],
-        ["","","","","","","",""],
+        ["","","","P","","","",""],
         ["","","","","","","",""],
         ["","","","","","","",""],
         ["p","p","p","p","p","p","p","p"],
