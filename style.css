@@ -73,6 +73,19 @@ body {
     font-family: 'Segoe UI Symbol', 'Arial', sans-serif;
     user-select: none;
     transition: background 0.2s;
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+.square img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
+    user-select: none;
 }
 
 .square.white {
