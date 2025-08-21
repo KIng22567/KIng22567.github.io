@@ -4,8 +4,8 @@ const API_BASE = "https://terrychessapi-cvdqgqe0esedcvh3.southafricanorth-01.azu
 
 async function LoadBoard() {
     const response = await fetch(`${API_BASE}/game/new`);
-    const board = await response.json()
-    return board
+    return await response.json()
+    
 }
 const boardDiv = document.getElementById('board');
 
@@ -13,10 +13,10 @@ document.getElementById('newGameBtn').addEventListener('click', () => {
     renderBoard(generateEmptyBoard());
 });
 
-function generateEmptyBoard() {
-    console.log(LoadBoard())
+async function generateEmptyBoard() {
+    console.log( await LoadBoard())
     // Simple placeholder: 8x8 grid with letters for pieces
-    const initialBoard = LoadBoard() 
+    const initialBoard =  await LoadBoard() 
     return initialBoard;
 }
 
