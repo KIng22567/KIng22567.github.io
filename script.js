@@ -14,17 +14,9 @@ document.getElementById('newGameBtn').addEventListener('click', () => {
 });
 
 function generateEmptyBoard() {
+    console.log(LoadBoard())
     // Simple placeholder: 8x8 grid with letters for pieces
-    const initialBoard = LoadBoard() || [
-        ["R","N","B","Q","K","B","N","R"],
-        ["P","P","P","P","P","P","P","P"],
-        ["","","","","","","",""],
-        ["","","","P","","","",""],
-        ["","","","","","","",""],
-        ["","","","","","","",""],
-        ["p","p","p","p","p","p","p","p"],
-        ["r","n","b","q","k","b","n","r"]
-    ];
+    const initialBoard = LoadBoard() 
     return initialBoard;
 }
 
