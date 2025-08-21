@@ -1,6 +1,6 @@
 // The main file
 
-const API_BASE = "http://localhost:5135"
+const API_BASE = "https://terrychessapi-cvdqgqe0esedcvh3.southafricanorth-01.azurewebsites.net"
 
 async function LoadBoard() {
     const response = await fetch(`${API_BASE}/game/new`);
